@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CakeShop.Models.product>
+<div class="row" style="width:100%">
+    <div class="col-md-4">
+        <div class="card" style="text-align:center">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6">
+                    <div class="" style="float:left">
+                        <img class="card-img-top" src="@Url.Content(item.img)" height="150" width="150" />
+                        <br />
+                        <br />
+                        <div class="card-body">
+                            <p>Weight:@item.weight</p>
+                            @Html.ActionLink(item.name, "/Details", new { id = item.id })
+
+                            <br />
+                            <br />
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
